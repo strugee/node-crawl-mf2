@@ -24,5 +24,15 @@
   "bugs": {
     "url": "https://github.com/strugee/node-crawl-mf2/issues"
   },
-  "homepage": "https://github.com/strugee/node-crawl-mf2#readme"
+  "homepage": "https://github.com/strugee/node-crawl-mf2#readme",
+  "dependencies": {
+    "concat-stream": "^1.6.2",
+    "microformat-node": "^2.0.1"
+  },
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "express": "^4.16.3",
+    "nyc": "^11.6.0",
+    "perjury": "^1.1.1"
+  }
 }
