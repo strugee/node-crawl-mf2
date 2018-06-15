@@ -1,0 +1,28 @@
+{
+  "name": "crawl-mf2",
+  "version": "1.0.0",
+  "description": "Crawl microformats2 data for h-entry and h-feeds",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/strugee/node-crawl-mf2.git"
+  },
+  "keywords": [
+    "mf2",
+    "microformats2",
+    "indieweb",
+    "crawl",
+    "microformats",
+    "markup",
+    "crawler"
+  ],
+  "author": "AJ Jordan <alex@strugee.net>",
+  "license": "LGPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/strugee/node-crawl-mf2/issues"
+  },
+  "homepage": "https://github.com/strugee/node-crawl-mf2#readme"
+}
