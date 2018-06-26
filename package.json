@@ -33,6 +33,7 @@
     "coveralls": "^3.0.0",
     "express": "^4.16.3",
     "nyc": "^11.6.0",
-    "perjury": "^1.1.1"
+    "perjury": "^1.1.1",
+    "vows": "^1.0.0-alpha.1"
   }
 }
