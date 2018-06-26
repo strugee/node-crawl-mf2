@@ -31,7 +31,7 @@ module.exports = function(baseUrl) {
 
 		var req = http.get(url);
 
-		req.on('error', err => emitter.emit(err));
+		req.on('error', err => emitter.emit('error', err));
 		req.on('response', function(res) {
 			// XXX handle non-2xx responses
 			res.pipe(concat(function(buf) {

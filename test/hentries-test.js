@@ -55,6 +55,7 @@ vows.describe('h-entry canonicalization module').addBatch({
 				topic: function(crawl) {
 					var emitter = crawl('http://localhost:47298/h-feed-with-h-entries.html');
 					emitter.on('error', this.callback);
+					return emitter;
 				},
 				'it works': function(err, emitter) {
 					assert.ifError(err);
@@ -62,12 +63,42 @@ vows.describe('h-entry canonicalization module').addBatch({
 				},
 				'and we listen for the `urlDisco` event': {
 					topic: function(emitter) {
-						emitter.on('urlDisco', this.callback);
+						emitter.once('urlDisco', url => this.callback(undefined, url));
 					},
 					'the event is emitted': function(err, url) {
 						assert.isString(url);
-						assert.equals('http://localhost:47298');
+						assert.equal(url, 'http://localhost:47298/h-feed-with-h-entries.html');
 					},
+				},
+				'and we listen for the `mf2Parse` event': {
+					topic: function(emitter) {
+						emitter.on('mf2Parse', (url, node) => this.callback(undefined, url, node));
+					},
+					'the emitted event includes the URL': function(err, url, node) {
+						assert.isString(url);
+						assert.equal(url, 'http://localhost:47298/h-feed-with-h-entries.html');
+					},
+					'the emitted event includes the parsed mf2 h-feed object': function(err, url, node) {
+						assert.isObject(node);
+						assert.isArray(node.type);
+						assert.isString(node.type[0]);
+						assert.equal(node.type[0], 'h-feed');
+					}
+				},
+				'and we listen for the `h-feed` event': {
+					topic: function(emitter) {
+						emitter.on('h-feed', (url, node) => this.callback(undefined, url, node));
+					},
+					'the emitted event includes the URL': function(err, url, node) {
+						assert.isString(url);
+						assert.equal(url, 'http://localhost:47298/h-feed-with-h-entries.html');
+					},
+					'the emitted event includes the parsed mf2 h-feed object': function(err, url, node) {
+						assert.isObject(node);
+						assert.isArray(node.type);
+						assert.isString(node.type[0]);
+						assert.equal(node.type[0], 'h-feed');
+					}
 				}
 			}
 			// XXX test more
