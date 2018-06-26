@@ -35,9 +35,7 @@ module.exports = function(baseUrl) {
 		req.on('response', function(res) {
 			// XXX handle non-2xx responses
 			res.pipe(concat(function(buf) {
-debugger;
 				mf2.get({html: buf.toString()}, function(err, data) {
-debugger;
 					if (err) {
 						emitter.emit('error', err);
 						return;
@@ -51,7 +49,6 @@ debugger;
 
 	emitter.on('mf2Parse', function(url, node) {
 		// XXX don't hardcode that it's the first node
-debugger;
 		var type = node.type[0];
 		if (type === 'h-feed') {
 			emitter.emit('h-feed', url, node);
