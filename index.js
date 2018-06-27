@@ -70,7 +70,7 @@ module.exports = function(baseUrl) {
 			if (postUrl.length === 1) {
 				var resolvedUrl = urlmod.resolve(url, postUrl[0]);
 
-				emitter.emit('urlDisco', url);
+				emitter.emit('urlDisco', resolvedUrl);
 			}
 		});
 	});
