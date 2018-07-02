@@ -2,6 +2,8 @@
 
 Crawl a [microformats2][] site to find canonical URLs for `h-entry`s
 
+Note: this module does not really handle pages with more than one top-level [microformats2][] nodes.
+
 ## Installation
 
     npm install crawl-mf2
