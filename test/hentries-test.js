@@ -22,7 +22,7 @@ License along with node-crawl-mf2. If not, see
 
 'use strict';
 
-var vows = require('perjury'),
+var vows = require('vows'),
     assert = vows.assert,
     express = require('express'),
     path = require('path');
