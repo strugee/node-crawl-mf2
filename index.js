@@ -22,7 +22,7 @@ var EventEmitter = require('events'),
     mf2 = require('microformat-node'),
     concat = require('concat-stream');
 
-module.exports = function(baseUrl) {
+module.exports = function crawlMf2(baseUrl) {
 	var emitter = new EventEmitter();
 
 	emitter.on('urlDisco', function(url) {
