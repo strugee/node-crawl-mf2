@@ -19,7 +19,7 @@ Start a crawl and log canonical h-entry URLs found on `https://strugee.net/blog/
 ```js
 var crawl = require('crawl-mf2');
 
-var crawler = crawl('https://strugee.net/blog/`);
+var crawler = crawl('https://strugee.net/blog/');
 
 crawler.on('h-entry', function(url, mf2node) {
 	console.log(url);
