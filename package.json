@@ -4,7 +4,7 @@
   "description": "Crawl microformats2 data for h-entry and h-feeds",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "nyc -r text -r lcov vows test/*-test.js"
   },
   "repository": {
     "type": "git",
