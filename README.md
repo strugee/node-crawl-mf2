@@ -1,5 +1,9 @@
 # `crawl-mf2`
 
+[![Build Status](https://travis-ci.org/strugee/node-crawl-mf2.svg?branch=master)](https://travis-ci.org/strugee/node-crawl-mf2)
+[![Coverage Status](https://coveralls.io/repos/github/strugee/node-crawl-mf2/badge.svg?branch=master)](https://coveralls.io/github/strugee/node-crawl-mf2?branch=master)
+[![Greenkeeper badge](https://badges.greenkeeper.io/strugee/node-crawl-mf2.svg)](https://greenkeeper.io/)
+
 Crawl a [microformats2][] site to find things like canonical URLs for `h-entry`s
 
 Note: this module does not really handle pages with more than one top-level [microformats2][] nodes.
